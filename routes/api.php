@@ -21,6 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+/*API for Home*/
+
 /*API for Networth*/
 Route::get('/networth', [NetworthController::class, 'index']);
 
@@ -30,6 +32,13 @@ Route::put('/networth/update/{net}', [NetworthController::class, 'update']);
 
 Route::delete('/networth/delete/{net}', [NetworthController::class, 'delete']);
 
+/*API for Investment*/
+
 /*API for Goal*/
 
+/*API for Property*/
+
+/*API for Prayer*/
+
 /*API for Donation*/
+

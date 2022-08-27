@@ -5,11 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Networth extends Model
+class Prayer extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'names','values', 'exvalue', 'invest'
-    ];
 }

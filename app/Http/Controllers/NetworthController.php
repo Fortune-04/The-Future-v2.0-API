@@ -17,6 +17,8 @@ class NetworthController extends Controller
         return Networth::create([
             'names' => request('names'),
             'values' => request('values'),
+            'exvalue' => request('exvalue'),
+            'invest' => request('invest'),
         ]);
     }
 
@@ -25,6 +27,8 @@ class NetworthController extends Controller
         $success = $net->update([
             'names' => request('names'),
             'values' => request('values'),
+            'exvalue' => request('exvalue'),
+            'invest' => request('invest'),
         ]);
     
         return [
