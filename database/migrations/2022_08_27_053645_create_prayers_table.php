@@ -15,6 +15,8 @@ class CreatePrayersTable extends Migration
     {
         Schema::create('prayers', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('page');
             $table->timestamps();
         });
     }

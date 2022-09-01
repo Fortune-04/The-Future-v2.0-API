@@ -12,7 +12,7 @@ class NetworthController extends Controller
         return Networth::all();
     }
 
-    public function add()
+    public function create()
     {
         return Networth::create([
             'names' => request('names'),
