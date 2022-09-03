@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Networth;
 use App\Models\Prayer;
 use App\Http\Controllers\NetworthController;
+use App\Http\Controllers\SurahController;
+use App\Http\Controllers\PrayerController;
+use App\Http\Controllers\DonationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +64,15 @@ Route::post('/prayer/create', [PrayerController::class, 'create']);
 Route::put('/prayer/update/{id}', [PrayerController::class, 'update']);
 
 Route::delete('/prayer/delete/{id}', [PrayerController::class, 'delete']);
+
+/*API for Surah*/
+Route::get('/surah', [SurahController::class, 'index']);
+
+Route::post('/surah/create', [SurahController::class, 'create']);
+
+Route::put('/surah/update/{id}', [SurahController::class, 'update']);
+
+Route::delete('/surah/delete/{id}', [SurahController::class, 'delete']);
 
 /*API for Donation*/
 Route::get('/donation', [DonationController::class, 'index']);

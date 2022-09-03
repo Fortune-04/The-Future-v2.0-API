@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Prayer extends Model
+class Donation extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'fajr','dhuhr','asr','maghrib','isha'
+        'amount_donated','total'
     ];
 }

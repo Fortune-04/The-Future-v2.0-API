@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Prayer;
 
 class PrayerController extends Controller
 {
@@ -14,16 +15,22 @@ class PrayerController extends Controller
     public function create()
     {
         return Prayer::create([
-            'name' => request('name'),
-            'page' => request('page'),
+            'fajr' => request('fajr'),
+            'dhuhr' => request('dhuhr'),
+            'asr' => request('asr'),
+            'maghrib' => request('maghrib'),
+            'isha' => request('isha'),
         ]);
     }
 
     public function update(Prayer $id)
     {
         $success = $id->update([
-            'name' => request('name'),
-            'page' => request('page'),
+            'fajr' => request('fajr'),
+            'dhuhr' => request('dhuhr'),
+            'asr' => request('asr'),
+            'maghrib' => request('maghrib'),
+            'isha' => request('isha'),
         ]);
     
         return [
