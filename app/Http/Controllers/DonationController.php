@@ -15,16 +15,16 @@ class DonationController extends Controller
     public function create()
     {
         return Donation::create([
-            'name' => request('amount_donated'),
-            'page' => request('total'),
+            'amount_donated' => request('amount_donated'),
+            'total' => request('total'),
         ]);
     }
 
     public function update(Donation $id)
     {
         $success = $id->update([
-            'name' => request('amount_donated'),
-            'page' => request('total'),
+            'amount_donated' => request('amount_donated'),
+            'total' => request('total'),
         ]);
     
         return [

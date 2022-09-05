@@ -9,6 +9,8 @@ use App\Http\Controllers\NetworthController;
 use App\Http\Controllers\SurahController;
 use App\Http\Controllers\PrayerController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\GoalController;
 
 /*
 |--------------------------------------------------------------------------
