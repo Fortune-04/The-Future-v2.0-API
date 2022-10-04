@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Goal extends Model
+class Home extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name','description', 'type', 'current', 'target'
+        'total_networth','monthly_income'
     ];
 }

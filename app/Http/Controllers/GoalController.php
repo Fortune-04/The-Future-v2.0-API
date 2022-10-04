@@ -12,11 +12,21 @@ class GoalController extends Controller
         return Goal::all();
     }
 
+    public function getGoalBasedType($type)
+    {
+        $data = Goal::where('type',$type)->get();
+
+        return $data;
+    }
+
     public function create()
     {
         return Goal::create([
             'name' => request('name'),
             'description' => request('description'),
+            'type' => request('type'),
+            'current' => request('current'),
+            'target' => request('target')
         ]);
     }
 
@@ -25,6 +35,8 @@ class GoalController extends Controller
         $success = $id->update([
             'name' => request('name'),
             'description' => request('description'),
+            'type' => request('type'),
+            'current' => request('current')
         ]);
     
         return [

@@ -11,6 +11,7 @@ use App\Http\Controllers\PrayerController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\GoalController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 /*API for Home*/
+Route::get('/home', [HomeController::class, 'index']);
+
+Route::post('/home/create', [HomeController::class, 'create']);
+
+Route::put('/home/update/{net}', [HomeController::class, 'update']);
+
+Route::delete('/home/delete/{net}', [HomeController::class, 'delete']);
 
 /*API for Networth*/
 Route::get('/networth', [NetworthController::class, 'index']);
@@ -42,6 +50,8 @@ Route::delete('/networth/delete/{net}', [NetworthController::class, 'delete']);
 
 /*API for Goal*/
 Route::get('/goal', [GoalController::class, 'index']);
+
+Route::get('/goal/{type}', [GoalController::class, 'getGoalBasedType']);
 
 Route::post('/goal/create', [GoalController::class, 'create']);
 
@@ -82,6 +92,8 @@ Route::get('/donation', [DonationController::class, 'index']);
 Route::post('/donation/create', [DonationController::class, 'create']);
 
 Route::put('/donation/update/{id}', [DonationController::class, 'update']);
+
+Route::put('/donation/update/total/{id}', [DonationController::class, 'updateTotal']);
 
 Route::delete('/donation/delete/{id}', [DonationController::class, 'delete']);
 

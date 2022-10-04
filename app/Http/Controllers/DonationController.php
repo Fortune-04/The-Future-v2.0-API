@@ -15,6 +15,7 @@ class DonationController extends Controller
     public function create()
     {
         return Donation::create([
+            'amount' => request('amount'),
             'amount_donated' => request('amount_donated'),
             'total' => request('total'),
         ]);
@@ -23,8 +24,20 @@ class DonationController extends Controller
     public function update(Donation $id)
     {
         $success = $id->update([
+            'amount' => request('amount'),
             'amount_donated' => request('amount_donated'),
             'total' => request('total'),
+        ]);
+    
+        return [
+            'success' => $success
+        ];
+    }
+
+    public function updateTotal(Donation $id)
+    {
+        $success = $id->update([
+            'total' => request('amt'),
         ]);
     
         return [
